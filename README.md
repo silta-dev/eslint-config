@@ -1,0 +1,2 @@
+# Silta ESLint config
+

@@ -1,0 +1,40 @@
+{
+  "name": "@silta/eslint-config-nodejs",
+  "version": "0.0.1-beta.1",
+  "description": "eslint-config standard to be used in Silta's node.js projects",
+  "main": "src/index.js",
+  "scripts": {
+    "eslint": "eslint -c src/index.js src/index.js",
+    "print-config": "eslint -c src/index.js --print-config .eslintrc.js"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "eslint": "8.28.0",
+    "eslint-config-airbnb-base": "15.0.0",
+    "eslint-plugin-import": "2.26.0",
+    "eslint-plugin-promise": "6.1.1"
+  },
+  "peerDependencies": {
+    "eslint": ">= 8.28.0",
+    "eslint-config-airbnb-base": ">= 15.0.0",
+    "eslint-plugin-import": ">= 2.26.0",
+    "eslint-plugin-promise": ">= 6.1.1"
+  },
+  "engines": {
+    "node": "^14 || ^16 || ^18"
+  },
+  "author": "Silta Finance AG",
+  "license": "MIT",
+  "keywords": [
+    "eslint",
+    "nodejs"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/silta-dev/eslint-config.git"
+  },
+  "bugs": {
+    "url": "https://github.com/silta-dev/eslint-config/issues"
+  },
+  "homepage": "https://github.com/silta-dev/eslint-config#readme"
+}
