@@ -1,0 +1,11 @@
+/node.js/node_modules
+/.idea
+/.vscode
+.DS_Store
+/.idea
+/.vscode
+*.diff
+*.patch
+*.tar.gz
+*.tgz
+*.zip
