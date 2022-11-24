@@ -32,21 +32,28 @@ jobs:
         with:
           format: tty
   build:
-    matrix:
-      project:
-        - node.js
-    name: Build ${{ matrix.project }}
-    working-directory: ${{ matrix.project }}
-    runs-on: ubuntu-22.04
     strategy:
+      fail-fast: false
+      matrix:
+        project:
+          - node.js
+        node:
+          - 14
+          - 16
+          - 18
+    name: Build ${{ matrix.project }} ${{ matrix.node }}
+    runs-on: ubuntu-22.04
     steps:
       - uses: actions/checkout@v3.1.0
       - uses: actions/setup-node@v3.5.1
         with:
-          node-version-file: ../.nvmrc
+          node-version: ${{ matrix.node }}
           cache: npm
           architecture: x64
+          cache-dependency-path: ${{ matrix.project }}/package-lock.json
       - name: Install node modules
+        working-directory: ${{ matrix.project }}
         run: npm ci
       - name: Lint source code
+        working-directory: ${{ matrix.project }}
         run: npm run eslint
